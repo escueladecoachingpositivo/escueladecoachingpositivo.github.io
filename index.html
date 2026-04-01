@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#1A2744">
+<title>Certificación Internacional en Coaching Positivo — ECP</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C8933A;
+  --gold-light: #E8B86D;
+  --gold-pale: #FDF3E3;
+  --navy: #1A2744;
+  --navy-mid: #243360;
+  --cream: #F8F4EE;
+  --cream-dark: #EDE7DC;
+  --white: #FFFFFF;
+  --text: #2A2A2A;
+  --muted: #7A7A8A;
+  --green: #2E7D5E;
+  --green-light: #E6F4EE;
+  --sky: #4A8FBF;
+  --page-max: 640px;
+  --page-max-desktop: 1180px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ── HEADER ── */
+.header {
+  background: linear-gradient(160deg, var(--navy) 0%, #1E3060 60%, #243878 100%);
+  color: white;
+  padding: 48px 24px 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  margin-top: 0;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 90% 10%, rgba(200,147,58,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 0% 90%, rgba(107,159,212,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.header-inner { position: relative; z-index: 1; max-width: 840px; }
+
+.school-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(200,147,58,0.2);
+  border: 1px solid rgba(200,147,58,0.45);
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold-light); }
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4.8vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.header h1 span { color: var(--gold-light); font-style: italic; }
+
+.header-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 70ch;
+}
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 13px;
+  border-radius: 20px;
+}
+
+/* ── URGENCY BAR ── */
+.urgency-bar {
+  background: linear-gradient(135deg, #B07520, var(--gold), #D4A040);
+  color: var(--navy);
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 0;
+  margin-top: 0;
+}
+.urgency-icon { font-size: 14px; line-height: 1; }
+.urgency-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  line-height: 1.25;
+}
+.urgency-text strong { font-size: 24px; letter-spacing: 0.2px; }
+
+/* ── SECTIONS ── */
+.section {
+  padding: 32px 20px;
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  background: transparent;
+  margin-top: 0;
+}
+
+.sec-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.sec-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* ── STATS GRID ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: white;
+  border: 1px solid var(--cream-dark);
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(26,39,68,0.07);
+}
+.stat-card.full { grid-column: span 2; }
+.stat-icon { font-size: 22px; margin-bottom: 6px; }
+.stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+}
+.stat-lbl {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+/* ── REQUIREMENTS ── */
+.req-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.req-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: white;
+  border: 1px solid var(--cream-dark);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 4px rgba(26,39,68,0.05);
+}
+.req-check {
+  width: 26px; height: 26px;
+  background: var(--green-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.req-text { font-size: 14px; line-height: 1.5; color: var(--text); padding-top: 2px; }
+
+/* ── MONTH CARDS ── */
+.months-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.month-card {
+  background: white;
+  border: 1px solid var(--cream-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(26,39,68,0.07);
+}
+.month-head {
+  padding: 16px 18px 14px;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.month-head.gold { background: linear-gradient(135deg, var(--gold) 0%, #9A6D20 100%); }
+.month-head.sky  { background: linear-gradient(135deg, var(--sky) 0%, #2E6A9A 100%); }
+.month-head.green{ background: linear-gradient(135deg, var(--green) 0%, #1A5A40 100%); }
+
+.mh-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.75; margin-bottom: 3px; }
+.mh-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; line-height: 1.2; }
+.mh-sub { font-size: 11px; opacity: 0.75; margin-top: 3px; }
+.mh-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px; font-weight: 900; opacity: 0.2; line-height: 1; flex-shrink: 0;
+}
+
+.month-body { padding: 16px 18px; }
+.session-list { list-style: none; margin-bottom: 12px; }
+.session-list li {
+  font-size: 13px;
+  color: var(--text);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--cream-dark);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  line-height: 1.45;
+}
+.session-list li:last-child { border-bottom: none; }
+.snum {
+  font-size: 10px; font-weight: 700;
+  color: var(--muted);
+  background: var(--cream-dark);
+  padding: 2px 6px; border-radius: 4px;
+  flex-shrink: 0; white-space: nowrap;
+}
+.month-live {
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 10px 13px;
+  font-size: 12px;
+  color: var(--navy-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+.month-live strong { font-weight: 700; }
+
+/* ── PRICING ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.price-hero {
+  background: linear-gradient(150deg, var(--navy) 0%, #1E3060 100%);
+  border-radius: 20px;
+  padding: 28px 22px;
+  color: white;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.price-hero::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  border: 30px solid rgba(200,147,58,0.15);
+}
+.price-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; right: 20px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 20px solid rgba(200,147,58,0.1);
+}
+.ph-inner { position: relative; z-index: 1; }
+.ph-tag { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
+.ph-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px; font-weight: 900; line-height: 0.9;
+  color: white;
+}
+.ph-amount sup { font-size: 26px; color: var(--gold-light); }
+.ph-strike { font-size: 16px; color: rgba(255,255,255,0.35); text-decoration: line-through; margin-top: 6px; }
+.ph-deadline {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(200,147,58,0.2);
+  border: 1px solid rgba(200,147,58,0.4);
+  color: var(--gold-light);
+  font-size: 12px; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
+  margin-top: 12px;
+}
+.ph-value {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.5;
+}
+.ph-value strong { color: var(--gold-light); }
+
+.price-regular {
+  background: white;
+  border: 1px solid var(--cream-dark);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.pr-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.pr-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 700;
+  color: var(--navy); opacity: 0.4; text-decoration: line-through;
+}
+
+/* ── BONUS ── */
+.bonus-list { display: flex; flex-direction: column; gap: 9px; }
+.bonus-item {
+  display: flex; align-items: center; gap: 12px;
+  background: white;
+  border: 1px solid var(--cream-dark);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 13px 15px;
+  box-shadow: 0 1px 4px rgba(26,39,68,0.05);
+}
+.bonus-icon { font-size: 20px; flex-shrink: 0; }
+.bonus-text { font-size: 13px; color: var(--text); font-weight: 600; line-height: 1.4; }
+
+/* ── CTA BUTTONS ── */
+.cta-section {
+  background: linear-gradient(150deg, var(--navy) 0%, #1E3060 100%);
+  padding: 34px 24px 30px;
+  text-align: center;
+  border-radius: 0;
+  margin-top: 0;
+}
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px; font-weight: 900;
+  color: white; line-height: 1.2; margin-bottom: 6px;
+}
+.cta-title em { color: var(--gold-light); font-style: italic; }
+.cta-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+
+.btn-row {
+  display: grid;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+  letter-spacing: 0.3px;
+}
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+.btn-wa { background: #25D366; color: white; }
+.btn-ig { background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #F77737); color: white; }
+.btn-mail { background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.25); color: white; }
+.btn-icon { font-size: 20px; }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.55);
+  padding: 22px 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 0;
+  border-radius: 0;
+}
+.footer strong { color: rgba(255,255,255,0.85); }
+.footer a { color: var(--gold-light); text-decoration: none; }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.footer-links a,
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.footer-sep { color: rgba(255,255,255,0.45); }
+.footer-email { margin-top: 2px; }
+
+/* ── STICKY CTA ── */
+.sticky-bar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  background: var(--navy);
+  border-top: 2px solid var(--gold);
+  padding: 8px 12px 9px;
+  display: block;
+  z-index: 999;
+  border-radius: 0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.sticky-info {
+  display: flex; flex-direction: column; justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 10px; line-height: 1.35;
+}
+.sticky-info strong { color: var(--gold-light); font-size: 12px; display: block; }
+
+/* ── ACCORDION for month cards on mobile ── */
+.acc-toggle {
+  width: 100%;
+  background: none; border: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0; cursor: pointer;
+  text-align: left;
+}
+.acc-arrow {
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.acc-arrow.open { transform: rotate(180deg); }
+.acc-body { display: none; }
+.acc-body.open { display: block; }
+
+/* ── TABLET ── */
+@media (max-width: 1100px) {
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-card.full { grid-column: span 2; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 760px) {
+  .page { padding: 0; }
+  .cta-title { font-size: 26px; }
+  .section { padding: 30px 20px; }
+}
+
+/* ── DESKTOP WEB ── */
+@media (min-width: 1024px) {
+  body { font-size: 16px; }
+
+  .page {
+    max-width: var(--page-max-desktop);
+    padding: 0 22px 0;
+  }
+
+  .header {
+    border-radius: 24px;
+    margin-top: 18px;
+    padding: 56px 42px 48px;
+  }
+
+  .urgency-bar {
+    border-radius: 14px;
+    margin-top: 14px;
+    flex-direction: row;
+    gap: 8px;
+    padding: 14px 20px;
+  }
+
+  .urgency-text {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .urgency-text strong {
+    font-size: inherit;
+  }
+
+  .section {
+    padding: 34px 30px;
+    border: 1px solid var(--cream-dark);
+    border-radius: 20px;
+    background: white;
+    margin-top: 14px;
+  }
+
+  .sec-title {
+    font-size: clamp(30px, 2.5vw, 40px);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .stat-card.full {
+    grid-column: 2 / span 2;
+  }
+
+  .req-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .months-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .cta-section {
+    border-radius: 20px;
+    margin-top: 14px;
+    padding: 36px 24px 40px;
+  }
+
+  .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    width: auto;
+    min-width: 220px;
+    margin-bottom: 0;
+  }
+
+  .footer {
+    margin: 0 auto 0;
+    max-width: 980px;
+    width: auto;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .sticky-bar {
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: calc(100% + 44px);
+    margin: 0 0 0 -22px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="school-badge"><div class="badge-dot"></div>Escuela de Coaching Positivo</div>
+      <h1>Certificación Internacional en<br><span>Coaching Positivo</span></h1>
+      <p class="header-sub">Transforma tu vida y tu manera de acompañar · Más que una formación, es un cambio en tu forma de gestionarte y una oportunidad profesional.</p>
+      <div class="pill-row">
+        <span class="pill">📹 Clases grabadas</span>
+        <span class="pill">📡 Encuentros en vivo</span>
+        <span class="pill">🏅 Certificación internacional</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <span class="urgency-icon">⏰</span>
+    <div class="urgency-text">
+      <span>Precio de lanzamiento válido hasta el</span>
+      <strong>16 de abril</strong>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <div class="sec-label">Vista general</div>
+    <div class="sec-title">Vista general de la Certificación</div>
+    <p class="sec-desc">Avanzás a tu ritmo con clases grabadas y un encuentro mensual en vivo para integrar y practicar.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">📅</div>
+        <div class="stat-val">7</div>
+        <div class="stat-lbl">Meses de formación</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎬</div>
+        <div class="stat-val">24</div>
+        <div class="stat-lbl">Clases grabadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📡</div>
+        <div class="stat-val">7</div>
+        <div class="stat-lbl">Masterclass en vivo</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div class="stat-val">4</div>
+        <div class="stat-lbl">Módulos temáticos</div>
+      </div>
+      <div class="stat-card full">
+        <div class="stat-icon">📅</div>
+        <div class="stat-val" style="font-size:22px;">27 de Abril 2026</div>
+        <div class="stat-lbl">Fecha de inicio</div>
+      </div>
+    </div>
+
+    <div class="sec-label" style="margin-top:4px;">Requisitos para certificar</div>
+    <div class="req-list" style="margin-top:10px;">
+      <div class="req-item"><div class="req-check">✔</div><div class="req-text">Completar el 100% del contenido asincrónico</div></div>
+      <div class="req-item"><div class="req-check">✔</div><div class="req-text">Entregar todas las bitácoras de ejercicios</div></div>
+      <div class="req-item"><div class="req-check">✔</div><div class="req-text">Realizar mínimo 3 procesos de coaching positivo</div></div>
+      <div class="req-item"><div class="req-check">✔</div><div class="req-text">Aprobar 3 sesiones evaluadas de práctica</div></div>
+      <div class="req-item"><div class="req-check">✔</div><div class="req-text">Participar en al menos 3 Masterclass en vivo (o ver la grabación + reflexión escrita)</div></div>
+    </div>
+  </div>
+
+  <!-- MONTHLY PLAN -->
+  <div class="section">
+    <div class="sec-label">Plan de estudios</div>
+    <div class="sec-title">Los 7 meses mes a mes</div>
+    <p class="sec-desc">Tocá cada mes para ver el contenido y la Masterclass incluida.</p>
+
+    <div class="months-stack">
+
+      <!-- MES 1 -->
+      <div class="month-card">
+        <button class="acc-toggle" onclick="toggle(this)">
+          <div class="month-head" style="flex:1;margin:0;padding:16px 18px 14px;display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="mh-left">
+              <div class="mh-tag">Mes 1 · Módulo 1</div>
+              <div class="mh-name">Autoconciencia y Transformación Personal</div>
+              <div class="mh-sub">La base de tu camino como coach</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="mh-num">1</div>
+              <div class="acc-arrow">▾</div>
+            </div>
+          </div>
+        </button>
+        <div class="acc-body">
+          <div class="month-body">
+            <ul class="session-list">
+              <li><span class="snum">E1</span>¿Qué es el Coaching Positivo? Ontología, PERMA y pilares</li>
+              <li><span class="snum">E2</span>Desarrollo de la auto-observación · Modelo O.S.A.R.</li>
+              <li><span class="snum">E3</span>Fortalezas del carácter: origen, virtudes y ejercicios</li>
+              <li><span class="snum">E4</span>Modo aprendiz: niveles de competencia y aliados</li>
+            </ul>
+            <div class="month-live">🎥 <div><strong>Masterclass 1:</strong> Bienvenida + El observador que soy como coach. Preguntas poderosas de apertura.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MES 2 -->
+      <div class="month-card">
+        <button class="acc-toggle" onclick="toggle(this)">
+          <div class="month-head sky" style="flex:1;margin:0;padding:16px 18px 14px;display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="mh-left">
+              <div class="mh-tag">Mes 2 · Módulo 1 cont.</div>
+              <div class="mh-name">Emociones, Estados de Ánimo y Coherencia</div>
+              <div class="mh-sub">El cuerpo como herramienta del coach</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="mh-num">2</div>
+              <div class="acc-arrow">▾</div>
+            </div>
+          </div>
+        </button>
+        <div class="acc-body">
+          <div class="month-body">
+            <ul class="session-list">
+              <li><span class="snum">E5–6</span>Emociones desde el coaching positivo · Rueda de Plutchick</li>
+              <li><span class="snum">—</span>Autorregulación emocional · Estrategias prácticas</li>
+              <li><span class="snum">—</span>Estados de ánimo: resentimiento, resignación, paz, entusiasmo</li>
+              <li><span class="snum">—</span>Coherencia: cuerpo, lenguaje y emoción en el rol del coach</li>
+            </ul>
+            <div class="month-live">🎥 <div><strong>Masterclass 2:</strong> Supervisión de casos. ¿Qué emociones te toman cuando acompañás?</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MES 3 -->
+      <div class="month-card">
+        <button class="acc-toggle" onclick="toggle(this)">
+          <div class="month-head gold" style="flex:1;margin:0;padding:16px 18px 14px;display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="mh-left">
+              <div class="mh-tag">Mes 3 · Módulo 2</div>
+              <div class="mh-name">Comunicación Transformadora I</div>
+              <div class="mh-sub">El poder del lenguaje en el coaching</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="mh-num">3</div>
+              <div class="acc-arrow">▾</div>
+            </div>
+          </div>
+        </button>
+        <div class="acc-body">
+          <div class="month-body">
+            <ul class="session-list">
+              <li><span class="snum">E7</span>Escucha activa: dimensiones, brechas y cómo acortarlas</li>
+              <li><span class="snum">E8</span>Declaraciones: el lenguaje que crea realidad</li>
+              <li><span class="snum">E9</span>Afirmaciones: hechos vs. interpretaciones</li>
+              <li><span class="snum">E10</span>Juicios personales: válidos, inválidos, fundados</li>
+            </ul>
+            <div class="month-live">🎥 <div><strong>Masterclass 3:</strong> Práctica guiada. Dinámica de escucha y declaraciones en breakout rooms.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MES 4 -->
+      <div class="month-card">
+        <button class="acc-toggle" onclick="toggle(this)">
+          <div class="month-head" style="flex:1;margin:0;padding:16px 18px 14px;display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="mh-left">
+              <div class="mh-tag">Mes 4 · Módulo 2 cont.</div>
+              <div class="mh-name">Comunicación Transformadora II</div>
+              <div class="mh-sub">Conversaciones y compromisos reales</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="mh-num">4</div>
+              <div class="acc-arrow">▾</div>
+            </div>
+          </div>
+        </button>
+        <div class="acc-body">
+          <div class="month-body">
+            <ul class="session-list">
+              <li><span class="snum">E11</span>Conversaciones públicas, privadas y la danza conversacional</li>
+              <li><span class="snum">E12</span>Peticiones, ofertas y ciclo de la promesa · Confianza</li>
+              <li><span class="snum">E13</span>Estructura completa de la conversación de coaching positivo</li>
+              <li><span class="snum">E14</span>Indagación Apreciativa: fundamentos, fases y ejercicio real</li>
+            </ul>
+            <div class="month-live">🎥 <div><strong>Masterclass 4:</strong> Q&A consciente + Role-playing de sesión de coaching completa.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MES 5 -->
+      <div class="month-card">
+        <button class="acc-toggle" onclick="toggle(this)">
+          <div class="month-head sky" style="flex:1;margin:0;padding:16px 18px 14px;display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="mh-left">
+              <div class="mh-tag">Mes 5 · Módulo 3</div>
+              <div class="mh-name">Cultivando Emociones Positivas</div>
+              <div class="mh-sub">Bienestar, hábitos y mindfulness</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="mh-num">5</div>
+              <div class="acc-arrow">▾</div>
+            </div>
+          </div>
+        </button>
+        <div class="acc-body">
+          <div class="month-body">
+            <ul class="session-list">
+              <li><span class="snum">E15</span>7 hábitos saludables · Cómo generar nuevos hábitos</li>
+              <li><span class="snum">E16</span>Las 10 emociones positivas · Cultivarlas en sesión</li>
+              <li><span class="snum">E17</span>Flow: estado de rendimiento óptimo y fortalezas del carácter</li>
+              <li><span class="snum">E18</span>Escritura creativa: bases neurológicas y ejercicios</li>
+            </ul>
+            <div class="month-live">🎥 <div><strong>Masterclass 5:</strong> Integración temática "El coach que practica lo que enseña".</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MES 6 -->
+      <div class="month-card">
+        <button class="acc-toggle" onclick="toggle(this)">
+          <div class="month-head green" style="flex:1;margin:0;padding:16px 18px 14px;display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="mh-left">
+              <div class="mh-tag">Mes 6 · Módulo 3–4</div>
+              <div class="mh-name">Mindfulness y Coaching Positivo Aplicado</div>
+              <div class="mh-sub">Herramientas para el bienestar integral</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="mh-num">6</div>
+              <div class="acc-arrow">▾</div>
+            </div>
+          </div>
+        </button>
+        <div class="acc-body">
+          <div class="month-body">
+            <ul class="session-list">
+              <li><span class="snum">E19</span>Mindfulness: origen, beneficios e integración en sesiones</li>
+              <li><span class="snum">E20</span>Diseño de intervenciones transformadoras · Role-playing</li>
+              <li><span class="snum">E21</span>Corporalidad y los 4 elementos (Biodanza) · Apertura/Cierre</li>
+              <li><span class="snum">—</span>Revisión de procesos de práctica supervisada</li>
+            </ul>
+            <div class="month-live">🎥 <div><strong>Masterclass 6:</strong> Supervisión profunda de procesos reales. El cuerpo del coach.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MES 7 -->
+      <div class="month-card">
+        <button class="acc-toggle" onclick="toggle(this)">
+          <div class="month-head gold" style="flex:1;margin:0;padding:16px 18px 14px;display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="mh-left">
+              <div class="mh-tag">Mes 7 · Cierre e Integración</div>
+              <div class="mh-name">Ética, Optimismo y Certificación</div>
+              <div class="mh-sub">Tu identidad como Coach Positivo certificado</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="mh-num">7</div>
+              <div class="acc-arrow">▾</div>
+            </div>
+          </div>
+        </button>
+        <div class="acc-body">
+          <div class="month-body">
+            <ul class="session-list">
+              <li><span class="snum">E24</span>Ética en la práctica del coaching positivo · Principios ECP</li>
+              <li><span class="snum">BONUS</span>Optimismo aprendido: optimismo en acción</li>
+              <li><span class="snum">—</span>Entrega de sesiones evaluadas finales</li>
+              <li><span class="snum">🎓</span>Ceremonia de certificación y cierre del programa</li>
+            </ul>
+            <div class="month-live">🎥 <div><strong>Masterclass 7:</strong> Cierre + Reconocimiento del proceso + Declaración colectiva de identidad como coach.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="section">
+    <div class="sec-label">Inversión</div>
+    <div class="sec-title">Precio de lanzamiento</div>
+    <p class="sec-desc">Una certificación valorada en más de <strong>U$S 1.500</strong> — disponible a precio especial hasta el 16 de abril.</p>
+
+    <div class="pricing-grid">
+      <div>
+        <div class="price-hero">
+          <div class="ph-inner">
+            <div class="ph-tag">Precio de lanzamiento</div>
+            <div class="ph-amount"><sup>U$S</sup>490</div>
+            <div class="ph-strike">Valor regular: U$S 686 · Valor real: +U$S 1.500</div>
+            <div class="ph-deadline">⏰ Válido hasta el 16 de abril</div>
+            <div class="ph-value">Con este precio de lanzamiento <strong>ahorrás más de U$S 1.010</strong> sobre el valor real de la formación.</div>
+          </div>
+        </div>
+
+        <div class="price-regular">
+          <div>
+            <div class="pr-label">Precio regular</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px;">A partir del 17 de abril</div>
+          </div>
+          <div class="pr-amount">U$S 686</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sec-label" style="margin-bottom:10px;">Todo lo que incluye</div>
+        <div class="bonus-list">
+          <div class="bonus-item"><div class="bonus-icon">🎁</div><div class="bonus-text">Acompañamiento personalizado durante todo el proceso</div></div>
+          <div class="bonus-item"><div class="bonus-icon">📓</div><div class="bonus-text">Guías de ejercicios prácticos por módulo</div></div>
+          <div class="bonus-item"><div class="bonus-icon">📘</div><div class="bonus-text">Ebook teórico completo de la certificación</div></div>
+          <div class="bonus-item"><div class="bonus-icon">♾️</div><div class="bonus-text">Acceso de por vida a todas las clases grabadas</div></div>
+          <div class="bonus-item"><div class="bonus-icon">🌐</div><div class="bonus-text">Acceso de por vida a la Comunidad de Coaches Positivos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section">
+    <div class="cta-title">¿Lista/o para<br>dar el <em>paso</em>?</div>
+    <p class="cta-sub">Escribinos y reservá tu lugar ahora</p>
+
+    <div class="btn-row">
+      <a href="https://wa.me/5491168139914?text=Hola%2C%20quiero%20información%20sobre%20la%20Certificación%20en%20Coaching%20Positivo" class="btn btn-wa">
+        <span class="btn-icon">💬</span> Escribir por WhatsApp
+      </a>
+      <a href="https://www.instagram.com/escueladecoachingpositivo" class="btn btn-ig">
+        <span class="btn-icon">📷</span> Ver en Instagram
+      </a>
+      <a href="mailto:escuelacoachingpositivo@gmail.com" class="btn btn-mail">
+        <span class="btn-icon">✉️</span> escuelacoachingpositivo@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>Escuela de Coaching Positivo</strong><br>
+    <div class="footer-links">
+      <a href="https://wa.me/5491168139914">📲 +54 9 11 6813 9914</a>
+      <span class="footer-sep">·</span>
+      <a href="https://www.instagram.com/escueladecoachingpositivo">📷 @escueladecoachingpositivo</a>
+    </div>
+    <a class="footer-email" href="mailto:escuelacoachingpositivo@gmail.com">✉️ escuelacoachingpositivo@gmail.com</a>
+  </div>
+</div>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <div class="sticky-info">
+    <strong>⏰ Hasta el 16 de abril</strong>
+    U$S 490 · precio de lanzamiento
+  </div>
+</div>
+
+<script>
+function toggle(button) {
+  const body = button.nextElementSibling;
+  const arrow = button.querySelector('.acc-arrow');
+
+  body.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+</script>
+</body>
+</html>
